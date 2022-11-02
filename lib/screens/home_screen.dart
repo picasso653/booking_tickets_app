@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
                   children:  [
                     // ignore: prefer_const_constructors
                     Text('Good Morning'),
-                    Image.asset('asset/plane_1.jpg'),
+                    Image.asset('assets/plane_1.jpg'),
                   ],
                 )
               ]),
