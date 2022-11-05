@@ -1,3 +1,5 @@
+import 'package:booking_tickets_app/utils/app_styles.dart';
+import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,16 +12,21 @@ class HomeScreen extends StatelessWidget {
         children: [
           // ignore: avoid_unnecessary_containers
           Container(
+            padding: EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
+                const SizedBox(height: 40,),
                 Row(
                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children:  [
                     // ignore: prefer_const_constructors
                     Column(crossAxisAlignment: CrossAxisAlignment.start,
+                      // ignore: prefer_const_literals_to_create_immutables
                       children: [
-                        Text('Good Morning'),
-                    Text('Book Tickets'),
+                        // ignore: prefer_const_constructors
+                        Text('Good Morning', style: Styles.headlineText3,),
+                        const SizedBox(height: 5,),
+                    Text('Book Tickets', style: Styles.headlineText1,),
                       ],
                     ),
                     Container(
@@ -37,6 +44,32 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+              // ignore: prefer_const_constructors
+              SizedBox(height: 25,),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white
+                ),
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                child: Row(
+                  children: [
+                    const Icon(FluentSystemIcons.ic_fluent_search_regular, color: Colors.grey,),
+                    Text('Search', style: Styles.headlineText4,)
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [ Text("Upcoming Flights", style: Styles.headlineText2,),
+                InkWell(
+                  child:
+                  Text("View all", style: Styles.textStyle.copyWith(color: primary),
+                  ),
+                  ),
+                  
+                ],
+              )
               ]),
           )
         ],
