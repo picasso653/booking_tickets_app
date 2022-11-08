@@ -1,3 +1,5 @@
+import 'package:booking_tickets_app/screens/another_ticket_view.dart';
+import 'package:booking_tickets_app/screens/ticket_view.dart';
 import 'package:booking_tickets_app/utils/app_styles.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
@@ -71,6 +73,16 @@ class HomeScreen extends StatelessWidget {
                 ],
               )
               ]),
+          ),
+          SizedBox(height: 15,),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                TicketView1(),
+                TicketView2()
+              ],
+            ),
           )
         ],
       ),

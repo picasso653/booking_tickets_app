@@ -2,8 +2,8 @@ import 'package:booking_tickets_app/utils/app_styles.dart';
 import 'package:booking_tickets_app/widgets/thick_container.dart';
 import 'package:flutter/material.dart';
 
-class TicketView1 extends StatelessWidget {
-  const TicketView1({super.key});
+class TicketView2 extends StatelessWidget {
+  const TicketView2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class TicketView1 extends StatelessWidget {
                 children: [Row(
                 children: [
                   Text(
-                    "NYC",
+                    "SLO",
                     style: Styles.headlineText3.copyWith(color: Colors.white),
                   ),
                   Expanded(child: Container()),
@@ -57,7 +57,7 @@ class TicketView1 extends StatelessWidget {
                   const ThickContainer(),
                   Expanded(child: Container()),
                   Text(
-                    "LDN",
+                    "SFO",
                     style: Styles.headlineText3.copyWith(color: Colors.white),
                   ),
                   const SizedBox(height: 3),
@@ -66,9 +66,9 @@ class TicketView1 extends StatelessWidget {
               ),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizedBox(width: 100, child: Text("New-York", style: Styles.headlineText4.copyWith(color: Colors.white),),),
+                      SizedBox(width: 100, child: Text("Santo Illesso", style: Styles.headlineText4.copyWith(color: Colors.white),),),
                        Text("80H 30M", style: Styles.headlineText4.copyWith(color: Colors.white),),
-                      SizedBox(width: 100, child: Text("London", textAlign: TextAlign.end, style: Styles.headlineText4.copyWith(color: Colors.white),),),
+                      SizedBox(width: 100, child: Text("San Fransisco", textAlign: TextAlign.end, style: Styles.headlineText4.copyWith(color: Colors.white),),),
                     ],),
                
                   

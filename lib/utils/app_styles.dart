@@ -8,7 +8,7 @@ class Styles {
   static Color primaryColor = primary;
   static Color textcolor = const Color.fromARGB(159, 52, 43, 58);
   static Color backgroundcolor = const Color.fromARGB(255, 207, 207, 192);
-  static Color orangeColor = const Color.fromARGB(255, 36, 96, 224);
+  static Color orangeColor = Color.fromARGB(255, 252, 54, 28);
   static TextStyle textStyle = TextStyle(fontWeight: FontWeight.w400, fontSize: 15, color: textcolor);
   static TextStyle headlineText1 = TextStyle(fontWeight: FontWeight.bold, fontSize: 25, color: textcolor);
   static TextStyle headlineText2 = TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: textcolor);

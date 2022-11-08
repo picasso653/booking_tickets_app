@@ -1,6 +1,4 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart' show Border, BorderRadius, BoxDecoration, BuildContext, Colors, Container, EdgeInsets, StatelessWidget, Widget;
 
 class ThickContainer extends StatelessWidget {
   const ThickContainer({super.key});
@@ -8,7 +6,7 @@ class ThickContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(3.0),
+      padding:const EdgeInsets.all(3.0),
       decoration: BoxDecoration( borderRadius: BorderRadius.circular(20),
       border: Border.all(width: 2.5, color: Colors.white)),
     );
