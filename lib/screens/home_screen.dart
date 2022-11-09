@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
         children: [
           // ignore: avoid_unnecessary_containers
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
                 const SizedBox(height: 40,),
@@ -61,6 +61,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              const SizedBox(height: 20,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [ Text("Upcoming Flights", style: Styles.headlineText2,),
@@ -74,15 +75,31 @@ class HomeScreen extends StatelessWidget {
               )
               ]),
           ),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 20),
             child: Row(
-              children: [
+              children: const [
                 TicketView1(),
                 TicketView2()
               ],
             ),
+          ),
+          const SizedBox(height: 15,),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [ Text("Hotels", style: Styles.headlineText2,),
+                InkWell(
+                  child:
+                  Text("View all", style: Styles.textStyle.copyWith(color: primary),
+                  ),
+                  ),
+                  
+                ],
+              ),
           )
         ],
       ),
