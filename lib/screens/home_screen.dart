@@ -1,5 +1,7 @@
 import 'package:booking_tickets_app/screens/another_ticket_view.dart';
+import 'package:booking_tickets_app/screens/hotel_screen.dart';
 import 'package:booking_tickets_app/screens/ticket_view.dart';
+import 'package:booking_tickets_app/utils/app_info.dart';
 import 'package:booking_tickets_app/utils/app_styles.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
@@ -100,6 +102,14 @@ class HomeScreen extends StatelessWidget {
                   
                 ],
               ),
+          ),
+          const SizedBox(height: 15,),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 20),
+            child: Row(
+              children:  hotel_list.map((hotelinfo) => HotelScreen(hotel: hotelinfo)).toList()
+            ),
           )
         ],
       ),
