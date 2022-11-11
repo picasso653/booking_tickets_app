@@ -1,7 +1,21 @@
 import 'package:booking_tickets_app/utils/app_styles.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/material.dart'
+    show
+        AssetImage,
+        BorderRadius,
+        BoxDecoration,
+        BoxShadow,
+        BuildContext,
+        Colors,
+        Column,
+        Container,
+        DecorationImage,
+        EdgeInsets,
+        MediaQuery,
+        SizedBox,
+        StatelessWidget,
+        Text,
+        Widget;
 
 class HotelScreen extends StatelessWidget {
   final Map<String, dynamic> hotel;
@@ -9,6 +23,7 @@ class HotelScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var hotel2 = hotel;
     return Container(
       width: MediaQuery.of(context).size.width * 0.6,
       height: 350,
@@ -26,29 +41,31 @@ class HotelScreen extends StatelessWidget {
           Container(
             height: 180,
             decoration: BoxDecoration(
-                color: Styles.primaryColor,
-                image: const DecorationImage(
-                    image: AssetImage('assets/plane_2.jpg'))),
+              color: Styles.primaryColor,
+              image: DecorationImage(
+                image: AssetImage("assets/${hotel["Image"]}"),
+              ),
+            ),
           ),
           const SizedBox(
             height: 10,
           ),
           Text(
-            "Global Will",
+            hotel['Place'],
             style: Styles.headlineText2.copyWith(color: Styles.kakiColor),
           ),
           const SizedBox(
             height: 5,
           ),
           Text(
-            "London",
+            hotel['Destination'],
             style: Styles.headlineText3.copyWith(color: Colors.white),
           ),
           const SizedBox(
             height: 8,
           ),
           Text(
-            "\$300 per night",
+            "${hotel['Price']} per night",
             style: Styles.headlineText1.copyWith(color: Styles.kakiColor),
           )
         ],
