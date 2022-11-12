@@ -9,7 +9,7 @@ class TicketView2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width*0.85,
-      height: MediaQuery.of(context).size.height,
+      height: 200,
       child: Container(
         margin:const EdgeInsets.only(right: 16),
         child: Column(

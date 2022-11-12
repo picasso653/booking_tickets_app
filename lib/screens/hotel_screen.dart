@@ -23,6 +23,7 @@ class HotelScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     var hotel2 = hotel;
     return Container(
       width: MediaQuery.of(context).size.width * 0.6,
@@ -65,7 +66,7 @@ class HotelScreen extends StatelessWidget {
             height: 8,
           ),
           Text(
-            "${hotel['Price']} per night",
+            "\$${hotel['Price']} per night",
             style: Styles.headlineText1.copyWith(color: Styles.kakiColor),
           )
         ],
