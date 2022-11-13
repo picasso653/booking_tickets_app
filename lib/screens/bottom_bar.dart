@@ -1,6 +1,7 @@
 // ignore: unnecessary_import
 // ignore_for_file: prefer_const_constructors
 
+import 'package:booking_tickets_app/screens/Search_Screen.dart';
 import 'package:booking_tickets_app/screens/home_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class _BottomBarState extends State<BottomBar> {
   int selectedIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    const Text('Search'),
+    SearchScreen(),
     const Text('Tickets'),
     const Text('Profile')
   ];

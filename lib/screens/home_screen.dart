@@ -1,4 +1,3 @@
-import 'package:booking_tickets_app/screens/another_ticket_view.dart';
 import 'package:booking_tickets_app/screens/hotel_screen.dart';
 import 'package:booking_tickets_app/screens/ticket_view.dart';
 import 'package:booking_tickets_app/utils/app_info.dart';

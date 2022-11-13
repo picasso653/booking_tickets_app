@@ -1,3 +1,4 @@
+import 'package:booking_tickets_app/utils/app_layouts.dart';
 import 'package:booking_tickets_app/utils/app_styles.dart';
 import 'package:booking_tickets_app/widgets/thick_container.dart';
 import 'package:flutter/material.dart';
@@ -10,21 +11,23 @@ class TicketView1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.85,
-      height: 200,
+      height: AppLayout.getHeight(200),
       child: Container(
-        margin: const EdgeInsets.only(right: 16),
+        margin: EdgeInsets.only(right: AppLayout.getHeight(16)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Column(
               children: [
                 Container(
-                    decoration: const BoxDecoration(
-                        color: Color.fromARGB(230, 51, 91, 223),
+                    decoration: BoxDecoration(
+                        color: const Color.fromARGB(230, 51, 91, 223),
                         borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(21),
-                            topRight: Radius.circular(21))),
-                    padding: const EdgeInsets.all(16),
+                            topLeft: Radius.circular(AppLayout.getHeight(21)),
+                            topRight: Radius.circular(AppLayout.getHeight(21)),
+                            ),
+                          ),
+                    padding: EdgeInsets.all(AppLayout.getHeight(16)),
                     child: Column(
                       children: [
                         Row(
@@ -40,7 +43,7 @@ class TicketView1 extends StatelessWidget {
                               child: Stack(
                                 children: [
                                   SizedBox(
-                                    height: 20,
+                                    height: AppLayout.getHeight(20),
                                     child: LayoutBuilder(
                                       builder: (BuildContext context,
                                           BoxConstraints constraints) {
@@ -90,7 +93,7 @@ class TicketView1 extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             SizedBox(
-                              width: 100,
+                              width: AppLayout.getWidth(100),
                               child: Text(
                                 ticket['from']['name'],
                                 style: Styles.headlineText4
@@ -103,7 +106,7 @@ class TicketView1 extends StatelessWidget {
                                   .copyWith(color: Colors.white),
                             ),
                             SizedBox(
-                              width: 100,
+                              width: AppLayout.getWidth(100),
                               child: Text(
                                 ticket['to']['name'],
                                 textAlign: TextAlign.end,
@@ -125,15 +128,15 @@ class TicketView1 extends StatelessWidget {
                   color: Styles.orangeColor,
                   child: Row(
                     children: [
-                      const SizedBox(
-                        height: 20,
-                        width: 10,
+                      SizedBox(
+                        height: AppLayout.getHeight(20),
+                        width: AppLayout.getWidth(10),
                         child: DecoratedBox(
                             decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(10),
-                              bottomRight: Radius.circular(10)),
+                              topRight: Radius.circular(AppLayout.getHeight(10)),
+                              bottomRight: Radius.circular(AppLayout.getHeight(10))),
                         )),
                       ),
                       Expanded(
