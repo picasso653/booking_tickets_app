@@ -2,6 +2,7 @@ import 'package:booking_tickets_app/screens/hotel_screen.dart';
 import 'package:booking_tickets_app/screens/ticket_view.dart';
 import 'package:booking_tickets_app/utils/app_info.dart';
 import 'package:booking_tickets_app/utils/app_styles.dart';
+import 'package:booking_tickets_app/widgets/double_text_widgets.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Styles.backgroundcolor,
       body: ListView(
         children: [
           Column(
@@ -65,17 +67,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [ Text("Upcoming Flights", style: Styles.headlineText2,),
-                    InkWell(
-                      child:
-                      Text("View all", style: Styles.textStyle.copyWith(color: primary),
-                      ),
-                      ),
-                      
-                    ],
-                  )
+                  const DoubleText(bigText: "Upcoming Flights", smallText: "View all")
                   ]),
               ),
               const SizedBox(height: 15,),
@@ -88,17 +80,7 @@ class HomeScreen extends StatelessWidget {
               ),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [ Text("Hotels", style: Styles.headlineText2,),
-                    InkWell(
-                      child:
-                      Text("View all", style: Styles.textStyle.copyWith(color: primary),
-                      ),
-                      ),
-                      
-                    ],
-                  ),
+                child: const DoubleText(bigText: "Hotels", smallText: "View all")
               ),
               const SizedBox(height: 15,),
               SingleChildScrollView(
