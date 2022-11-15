@@ -153,6 +153,13 @@ class SearchScreen extends StatelessWidget {
                   children: [
                     Text('Take Love', style: Styles.headlineText1.copyWith(color: Colors.white, fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
                     SizedBox(height: AppLayout.getHeight(5),),
+                    Row(
+                      children: const [
+                        Text('😍', style: TextStyle(fontSize: 38),),
+                        Text('😊', style: TextStyle(fontSize: 50),),
+                        Text('😘', style: TextStyle(fontSize: 35))
+                      ],
+                    )
                   ],
                 ),
               )
