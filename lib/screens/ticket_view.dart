@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 
 class TicketView1 extends StatelessWidget {
   final Map<String, dynamic> ticket;
-  const TicketView1({super.key, required this.ticket});
+  final bool? isColor;
+  const TicketView1({super.key, required this.ticket, this.isColor});
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +22,12 @@ class TicketView1 extends StatelessWidget {
               children: [
                 Container(
                     decoration: BoxDecoration(
-                        color: const Color.fromARGB(230, 51, 91, 223),
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(AppLayout.getHeight(21)),
-                            topRight: Radius.circular(AppLayout.getHeight(21)),
-                            ),
-                          ),
+                      color: isColor==null? const Color.fromARGB(230, 51, 91, 223): Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(AppLayout.getHeight(21)),
+                        topRight: Radius.circular(AppLayout.getHeight(21)),
+                      ),
+                    ),
                     padding: EdgeInsets.all(AppLayout.getHeight(16)),
                     child: Column(
                       children: [
@@ -34,8 +35,8 @@ class TicketView1 extends StatelessWidget {
                           children: [
                             Text(
                               ticket['from']['code'],
-                              style: Styles.headlineText3
-                                  .copyWith(color: Colors.white),
+                              style: isColor==null? Styles.headlineText3
+                                  .copyWith(color: Colors.white): Styles.headlineText3,
                             ),
                             Expanded(child: Container()),
                             const ThickContainer(),
@@ -55,12 +56,12 @@ class TicketView1 extends StatelessWidget {
                                           children: List.generate(
                                             (constraints.constrainWidth() / 6)
                                                 .floor(),
-                                            (index) => const SizedBox(
+                                            (index) =>  SizedBox(
                                               width: 3,
                                               height: 1,
                                               child: DecoratedBox(
                                                   decoration: BoxDecoration(
-                                                      color: Colors.white)),
+                                                      color: isColor==null? Colors.white: Colors.grey.shade300)),
                                             ),
                                           ),
                                         );
@@ -70,9 +71,9 @@ class TicketView1 extends StatelessWidget {
                                   Center(
                                     child: Transform.rotate(
                                       angle: 1.5,
-                                      child: const Icon(
+                                      child:  Icon(
                                         Icons.local_airport_rounded,
-                                        color: Colors.white,
+                                        color:isColor==null? Colors.white: Colors.grey,
                                       ),
                                     ),
                                   ),
@@ -83,8 +84,8 @@ class TicketView1 extends StatelessWidget {
                             Expanded(child: Container()),
                             Text(
                               ticket['to']['code'],
-                              style: Styles.headlineText3
-                                  .copyWith(color: Colors.white),
+                              style:isColor==null? Styles.headlineText3
+                                  .copyWith(color: Colors.white):Styles.headlineText3,
                             ),
                             const SizedBox(height: 3),
                           ],
@@ -96,22 +97,22 @@ class TicketView1 extends StatelessWidget {
                               width: AppLayout.getWidth(100),
                               child: Text(
                                 ticket['from']['name'],
-                                style: Styles.headlineText4
-                                    .copyWith(color: Colors.white),
+                                style:isColor==null? Styles.headlineText4
+                                    .copyWith(color: Colors.white): Styles.headlineText4,
                               ),
                             ),
                             Text(
                               ticket['flying time'],
-                              style: Styles.headlineText4
-                                  .copyWith(color: Colors.white),
+                              style:isColor==null? Styles.headlineText4
+                                  .copyWith(color: Colors.white): Styles.headlineText4,
                             ),
                             SizedBox(
                               width: AppLayout.getWidth(100),
                               child: Text(
                                 ticket['to']['name'],
                                 textAlign: TextAlign.end,
-                                style: Styles.headlineText4
-                                    .copyWith(color: Colors.white),
+                                style:isColor==null? Styles.headlineText4
+                                    .copyWith(color: Colors.white): Styles.headlineText4,
                               ),
                             ),
                           ],
@@ -135,8 +136,10 @@ class TicketView1 extends StatelessWidget {
                             decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(AppLayout.getHeight(10)),
-                              bottomRight: Radius.circular(AppLayout.getHeight(10))),
+                              topRight:
+                                  Radius.circular(AppLayout.getHeight(10)),
+                              bottomRight:
+                                  Radius.circular(AppLayout.getHeight(10))),
                         )),
                       ),
                       Expanded(

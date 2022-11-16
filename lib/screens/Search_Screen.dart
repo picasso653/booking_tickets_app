@@ -1,6 +1,7 @@
 // ignore: file_names
 // ignore: file_names
 import 'package:booking_tickets_app/utils/app_styles.dart';
+import 'package:booking_tickets_app/widgets/ticket_tab.dart';
 import 'package:booking_tickets_app/widgets/icon_text_widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -20,36 +21,7 @@ class SearchScreen extends StatelessWidget {
           SizedBox(height: AppLayout.getHeight(40)),
           Text('What are \nyou looking for?', style: Styles.headlineText1.copyWith(fontSize: AppLayout.getHeight(35)),),
           SizedBox(height: AppLayout.getHeight(20),),
-          FittedBox(
-            child:Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(AppLayout.getHeight(50),
-              ),
-              color: const Color.fromARGB(255, 226, 221, 221)),
-              padding: const EdgeInsets.all(3.5),
-              child: Row(
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width*.44,
-                    padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
-                    decoration: BoxDecoration(
-              borderRadius: BorderRadius.horizontal( left: Radius.circular(AppLayout.getHeight(50)),
-              ),
-              color: Colors.white),
-              child: const Center(child: Text('Airline Tickets'),),
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width*.44,
-                    padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
-                    decoration: BoxDecoration(
-              borderRadius: BorderRadius.horizontal( right: Radius.circular(AppLayout.getHeight(50)),
-              ),
-              color: Colors.grey.shade300),
-              child: const Center(child: Text('Hotels'),),
-                  )
-                ],
-              ),
-          ) ,),
+           const TicketTab(firstTab: 'Airline Tickets', secondTab: 'Hotels',),
           SizedBox(height: AppLayout.getHeight(25),),
           const AppIconText(icon: Icons.flight_takeoff_rounded, text: 'Depature'),
           SizedBox(height: AppLayout.getHeight(20),),
@@ -91,7 +63,7 @@ class SearchScreen extends StatelessWidget {
               child: Column(
               children: [
                 Container(
-                  height: AppLayout.getHeight(190),
+                  height: AppLayout.getHeight(200),
                   // ignore: prefer_const_constructors
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(AppLayout.getHeight(12)),
@@ -143,7 +115,7 @@ class SearchScreen extends StatelessWidget {
               SizedBox(height: AppLayout.getHeight(10),),
               Container(
                 width: MediaQuery.of(context).size.width*.44,
-                height: 150,
+                height: 185,
                 padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(12), horizontal: AppLayout.getWidth(12)),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(AppLayout.getHeight(12)),
