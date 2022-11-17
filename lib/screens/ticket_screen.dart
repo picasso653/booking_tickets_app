@@ -25,8 +25,27 @@ class TicketScreen extends StatelessWidget {
               Text('Tickets', style: Styles.headlineText2,),
               SizedBox(height: AppLayout.getHeight(20)),
               const TicketTab(firstTab: 'Upcoming', secondTab: 'Previous'),
+              SizedBox(height: AppLayout.getHeight(20),),
               Container(
+                padding: EdgeInsets.only(left: AppLayout.getHeight(15)),
                 child: TicketView1(ticket: ticketList[0], isColor: true,),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                color: Colors.white,
+                child: Column(children: [
+                  Row(
+                    children: [
+                      Column(
+                        children: [
+                          Text('Flutter DB', style: Styles.headlineText3,),
+                          SizedBox(height: AppLayout.getHeight(5),),
+                          Text('Passenger', style: Styles.headlineText3,),
+                        ],
+                      )
+                    ],
+                  )
+                ],),
               )
             ],
           )

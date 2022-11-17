@@ -12,7 +12,7 @@ class TicketView1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.85,
-      height: AppLayout.getHeight(200),
+      height: AppLayout.getHeight(170),
       child: Container(
         margin: EdgeInsets.only(right: AppLayout.getHeight(16)),
         child: Column(
@@ -39,7 +39,7 @@ class TicketView1 extends StatelessWidget {
                                   .copyWith(color: Colors.white): Styles.headlineText3,
                             ),
                             Expanded(child: Container()),
-                            const ThickContainer(),
+                            const ThickContainer(isColor: true,),
                             Expanded(
                               child: Stack(
                                 children: [
@@ -80,7 +80,7 @@ class TicketView1 extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            const ThickContainer(),
+                            const ThickContainer(isColor: true,),
                             Expanded(child: Container()),
                             Text(
                               ticket['to']['code'],
@@ -126,7 +126,7 @@ class TicketView1 extends StatelessWidget {
                 // The previous container shows the blue part of the ticket
                 // The next container shows the link between the red and blue part of the ticket
                 Container(
-                  color: Styles.orangeColor,
+                  color:isColor==null? Styles.orangeColor:Colors.white,
                   child: Row(
                     children: [
                       SizedBox(
@@ -154,12 +154,12 @@ class TicketView1 extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: List.generate(
                                   (constraints.constrainWidth() / 15).floor(),
-                                  (index) => const SizedBox(
+                                  (index) =>  SizedBox(
                                     width: 3,
                                     height: 1,
                                     child: DecoratedBox(
                                         decoration:
-                                            BoxDecoration(color: Colors.white)),
+                                            BoxDecoration(color: isColor==null? Colors.white: Colors.grey)),
                                   ),
                                 ),
                               );
@@ -184,7 +184,7 @@ class TicketView1 extends StatelessWidget {
                 // the next container shows the red part of the ticket
                 Container(
                   decoration: BoxDecoration(
-                    color: Styles.orangeColor,
+                    color:isColor==null? Styles.orangeColor: Colors.white,
                     borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.circular(21),
                         bottomRight: Radius.circular(21)),
@@ -199,16 +199,16 @@ class TicketView1 extends StatelessWidget {
                         children: [
                           Text(
                             ticket['date'],
-                            style: Styles.headlineText3
-                                .copyWith(color: Colors.white),
+                            style:isColor==null? Styles.headlineText3
+                                .copyWith(color: Colors.white):Styles.headlineText3,
                           ),
                           const SizedBox(
                             height: 5,
                           ),
                           Text(
                             'Date',
-                            style: Styles.headlineText3
-                                .copyWith(color: Colors.white),
+                            style:isColor==null? Styles.headlineText3
+                                .copyWith(color: Colors.white):Styles.headlineText3,
                           )
                         ],
                       ),
@@ -217,16 +217,16 @@ class TicketView1 extends StatelessWidget {
                         children: [
                           Text(
                             ticket['depature'],
-                            style: Styles.headlineText3
-                                .copyWith(color: Colors.white),
+                            style:isColor==null? Styles.headlineText3
+                                .copyWith(color: Colors.white):Styles.headlineText3,
                           ),
                           const SizedBox(
                             height: 5,
                           ),
                           Text(
                             'Depature Time',
-                            style: Styles.headlineText3
-                                .copyWith(color: Colors.white),
+                            style:isColor==null? Styles.headlineText3
+                                .copyWith(color: Colors.white):Styles.headlineText3,
                           )
                         ],
                       ),
@@ -235,16 +235,16 @@ class TicketView1 extends StatelessWidget {
                         children: [
                           Text(
                             ticket['number'],
-                            style: Styles.headlineText3
-                                .copyWith(color: Colors.white),
+                            style:isColor==null? Styles.headlineText3
+                                .copyWith(color: Colors.white):Styles.headlineText3,
                           ),
                           const SizedBox(
                             height: 5,
                           ),
                           Text(
                             'Number',
-                            style: Styles.headlineText3
-                                .copyWith(color: Colors.white),
+                            style:isColor==null? Styles.headlineText3
+                                .copyWith(color: Colors.white):Styles.headlineText3,
                           )
                         ],
                       )
