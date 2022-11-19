@@ -2,6 +2,7 @@ import 'package:booking_tickets_app/screens/ticket_view.dart';
 import 'package:booking_tickets_app/utils/app_info.dart';
 import 'package:booking_tickets_app/utils/app_layouts.dart';
 import 'package:booking_tickets_app/utils/app_styles.dart';
+import 'package:booking_tickets_app/widgets/column_layout.dart';
 import 'package:booking_tickets_app/widgets/ticket_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -35,14 +36,10 @@ class TicketScreen extends StatelessWidget {
                 color: Colors.white,
                 child: Column(children: [
                   Row(
-                    children: [
-                      Column(
-                        children: [
-                          Text('Flutter DB', style: Styles.headlineText3,),
-                          SizedBox(height: AppLayout.getHeight(5),),
-                          Text('Passenger', style: Styles.headlineText3,),
-                        ],
-                      )
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      ColumnLayout(firstText: 'Flutter DB', secondText: 'Passenger', alignment: CrossAxisAlignment.start, isColor: true,),
+                      ColumnLayout(firstText: '2953 856871', secondText: 'Passport', alignment: CrossAxisAlignment.end, isColor: true,)
                     ],
                   )
                 ],),

@@ -1,5 +1,6 @@
 import 'package:booking_tickets_app/utils/app_layouts.dart';
 import 'package:booking_tickets_app/utils/app_styles.dart';
+import 'package:booking_tickets_app/widgets/column_layout.dart';
 import 'package:booking_tickets_app/widgets/thick_container.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class TicketView1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.85,
-      height: AppLayout.getHeight(170),
+      height: AppLayout.getHeight(161),
       child: Container(
         margin: EdgeInsets.only(right: AppLayout.getHeight(16)),
         child: Column(
@@ -185,69 +186,17 @@ class TicketView1 extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     color:isColor==null? Styles.orangeColor: Colors.white,
-                    borderRadius: const BorderRadius.only(
-                        bottomLeft: Radius.circular(21),
-                        bottomRight: Radius.circular(21)),
+                    borderRadius:  BorderRadius.only(
+                        bottomLeft: Radius.circular(isColor==null?21:0),
+                        bottomRight: Radius.circular(isColor==null?21:0)),
                   ),
                   padding: const EdgeInsets.only(
                       top: 10, left: 16, right: 16, bottom: 16),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            ticket['date'],
-                            style:isColor==null? Styles.headlineText3
-                                .copyWith(color: Colors.white):Styles.headlineText3,
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            'Date',
-                            style:isColor==null? Styles.headlineText3
-                                .copyWith(color: Colors.white):Styles.headlineText3,
-                          )
-                        ],
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            ticket['depature'],
-                            style:isColor==null? Styles.headlineText3
-                                .copyWith(color: Colors.white):Styles.headlineText3,
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            'Depature Time',
-                            style:isColor==null? Styles.headlineText3
-                                .copyWith(color: Colors.white):Styles.headlineText3,
-                          )
-                        ],
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text(
-                            ticket['number'],
-                            style:isColor==null? Styles.headlineText3
-                                .copyWith(color: Colors.white):Styles.headlineText3,
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            'Number',
-                            style:isColor==null? Styles.headlineText3
-                                .copyWith(color: Colors.white):Styles.headlineText3,
-                          )
-                        ],
-                      )
+                    children: [ColumnLayout(firstText:ticket['date'] , secondText:'Date' , alignment: CrossAxisAlignment.start ),
+                    ColumnLayout(firstText:ticket['depature'] , secondText:'Depature Time' , alignment: CrossAxisAlignment.center ),
+                    ColumnLayout(firstText:ticket['number'] , secondText:'Number' , alignment: CrossAxisAlignment.end ),
                     ],
                   ),
                 ),
