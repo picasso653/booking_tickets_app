@@ -5,8 +5,6 @@ import 'package:booking_tickets_app/utils/app_styles.dart';
 import 'package:booking_tickets_app/widgets/column_layout.dart';
 import 'package:booking_tickets_app/widgets/ticket_tab.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class TicketScreen extends StatelessWidget {
   const TicketScreen({super.key});

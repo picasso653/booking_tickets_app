@@ -1,7 +1,7 @@
 // ignore: unnecessary_import
 // ignore_for_file: prefer_const_constructors
 
-import 'package:booking_tickets_app/screens/Search_Screen.dart';
+import 'package:booking_tickets_app/screens/search_screen.dart';
 import 'package:booking_tickets_app/screens/home_screen.dart';
 import 'package:booking_tickets_app/screens/ticket_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';

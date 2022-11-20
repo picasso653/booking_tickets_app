@@ -1,5 +1,3 @@
-// ignore: file_names
-// ignore: file_names
 import 'package:booking_tickets_app/utils/app_styles.dart';
 import 'package:booking_tickets_app/widgets/ticket_tab.dart';
 import 'package:booking_tickets_app/widgets/icon_text_widgets.dart';
