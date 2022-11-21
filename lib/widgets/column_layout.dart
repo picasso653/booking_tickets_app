@@ -17,6 +17,7 @@ class ColumnLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: alignment,
       children: [
         Text(
           firstText,
