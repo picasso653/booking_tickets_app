@@ -1,6 +1,7 @@
 // ignore: unnecessary_import
 // ignore_for_file: prefer_const_constructors
 
+import 'package:booking_tickets_app/screens/profile_screen.dart';
 import 'package:booking_tickets_app/screens/search_screen.dart';
 import 'package:booking_tickets_app/screens/home_screen.dart';
 import 'package:booking_tickets_app/screens/ticket_screen.dart';
@@ -20,7 +21,7 @@ class _BottomBarState extends State<BottomBar> {
     HomeScreen(),
     SearchScreen(),
     const TicketScreen(),
-    const Text('Profile')
+    const ProfileScreen()
   ];
   void _onItemTapped(int index) {
     setState(() {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // ignore: prefer_const_constructors
-Color primary = Color.fromARGB(255, 61, 91, 173);
+Color primary = Color.fromARGB(255, 73, 108, 204);
 
 class Styles {
   static Color primaryColor = primary;
