@@ -1,4 +1,6 @@
  import 'package:booking_tickets_app/utils/app_layouts.dart';
+import 'package:booking_tickets_app/widgets/column_layout.dart';
+import 'package:booking_tickets_app/widgets/layout_builder_widget.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -119,7 +121,59 @@ class ProfileScreen extends StatelessWidget {
               ],),
               )
               ],
-            )
+            ),
+            SizedBox(height: AppLayout.getHeight(25),),
+            Text('Accumulated miles', style: Styles.headlineText2,),
+            SizedBox(height: AppLayout.getHeight(15),),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(15)),
+              child: Column(
+              children: [
+                Text('198828', style: TextStyle(fontSize: 45, fontWeight: FontWeight.w600, color: Styles.textcolor),),
+                SizedBox(height: AppLayout.getHeight(20),),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Miles Accured', style: Styles.headlineText4.copyWith(fontSize: 16),),
+                    Text('23rd November 2022', style: Styles.headlineText4.copyWith(fontSize: 16),),
+                  ],
+                ),
+                SizedBox(height: AppLayout.getHeight(4),),
+                Divider(color: Colors.grey.shade300,),
+                SizedBox(height: AppLayout.getHeight(4),),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    ColumnLayout(firstText: '23 042', secondText: 'Miles', alignment: CrossAxisAlignment.start, isColor: true,),
+                    ColumnLayout(firstText: 'Airline CO', secondText: 'Receiced From', alignment: CrossAxisAlignment.end, isColor: true,),
+                  ],
+                ),
+                SizedBox(height: AppLayout.getHeight(12),),
+                const AppLayoutBuilder(sections: 12, isColor: true,),
+                SizedBox(height: AppLayout.getHeight(12),),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    ColumnLayout(firstText: '24', secondText: 'Miles', alignment: CrossAxisAlignment.start, isColor: true,),
+                    ColumnLayout(firstText: 'MacDonald', secondText: 'Received From', alignment: CrossAxisAlignment.start, isColor: true,),
+                  ],
+                ),
+                SizedBox(height: AppLayout.getHeight(12),),
+                const AppLayoutBuilder(sections: 12, isColor: true,),
+                SizedBox(height: AppLayout.getHeight(12),),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    ColumnLayout(firstText: '52 342', secondText: 'Miles', alignment: CrossAxisAlignment.start, isColor: true,),
+                    ColumnLayout(firstText: 'Saints Row', secondText: 'Received From', alignment: CrossAxisAlignment.start, isColor: true,),
+
+                  ],
+                )
+              ],
+            ),
+            ),
+            SizedBox(height: AppLayout.getHeight(20),),
+            Center(child: Text('How to get more miles', style: Styles.textStyle.copyWith(color: Styles.primaryColor, fontWeight: FontWeight.w500),))
         ],
       ),
     );
